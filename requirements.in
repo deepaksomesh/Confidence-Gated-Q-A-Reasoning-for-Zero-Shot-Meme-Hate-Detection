@@ -1,0 +1,8 @@
+datasets
+jsonlines
+numpy
+Pillow
+qwen-vl-utils
+scikit-learn
+torch
+transformers
