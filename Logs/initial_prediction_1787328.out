@@ -1,0 +1,47 @@
+========================================
+Job started: Fri Apr 24 02:20:56 CEST 2026
+Node: node864
+Job ID: 1787328
+========================================
+Python: /home/s4577663/.conda/envs/NLP_env/bin/python
+Running initial Hate meme prediction ..
+Initializing Qwen/Qwen3-VL-8B-Instruct on cuda...
+Streaming 100 records from emily49/hateful_memes_train_dev...
+>>> Progress: 20/100 completed.
+>>> Progress: 40/100 completed.
+>>> Progress: 60/100 completed.
+>>> Progress: 80/100 completed.
+>>> Progress: 100/100 completed.
+
+============================================================================================================================================
+DATASET OVERVIEW
+============================================================================================================================================
+Full rows                           : 100
+Full unique examples                : 100
+Hate records (Ground Truth)         : 35
+Non-Hate records (Ground Truth)     : 65
+Full duplicate key rows             : 0
+
+Atomic - Structured Soft
+--------------------------------------------------------------------------------------------------------------------------------------------
+Accuracy            : 0.7600
+Macro Precision     : 0.7475
+Macro Recall        : 0.7692
+Macro F1            : 0.7500
+Weighted Precision  : 0.7851
+Weighted Recall     : 0.7600
+Weighted F1         : 0.7650
+Balanced Accuracy   : 0.7692
+
+============================================================================================================================================
+CLASS-WISE METRICS
+============================================================================================================================================
+Baseline - Structured Direct
+--------------------------------------------------------------------------------------------------------------------------------------------
+Class                Precision       Recall          F1              Support   
+non-hateful          0.8727          0.7385          0.8000          65        
+hateful              0.6222          0.8000          0.7000          35        
+============================================================================================================================================
+Log file saved to: /home/s4577663/NLP/Output/Step1_hate_meme_initial_predictions.jsonl
+
+Job finished: Fri Apr 24 02:24:57 CEST 2026
