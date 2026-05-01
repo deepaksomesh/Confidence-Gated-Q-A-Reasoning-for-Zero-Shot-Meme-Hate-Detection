@@ -11,12 +11,10 @@ from sklearn.metrics import (
 )
 
 # ============================================================
-# 1. ABLATION SETTINGS (CHANGE THESE FOR YOUR EXPERIMENTS)
+# 1. ABLATION SETTINGS (Automated Array)
 # ============================================================
-# Choose one: "atomic", "dynamic_qa", "static_qa", "cot"
-TECHNIQUE = "dynamic_qa"  
-
-# Pushing the threshold higher to trigger more refinements!
+# The script will now loop through all of these automatically!
+TECHNIQUES = ["atomic", "dynamic_qa", "static_qa", "cot"]
 CONFIDENCE_THRESHOLD = 0.95  
 
 # ============================================================
@@ -31,7 +29,6 @@ DATASET_ID = "emily49/hateful_memes_train_dev"
 
 BASE_OUTPUT = os.path.join(PROJECT_ROOT, "Output")
 IMAGE_SAVE_DIR = os.path.join(BASE_OUTPUT, "downloaded_images")
-LOG_FILE = os.path.join(BASE_OUTPUT, f"Step2_{TECHNIQUE}_t{CONFIDENCE_THRESHOLD}_predictions.jsonl")
 
 os.makedirs(IMAGE_SAVE_DIR, exist_ok=True)
 os.makedirs(os.environ["HF_HOME"], exist_ok=True)
@@ -44,7 +41,7 @@ PROGRESS_EVERY = 20
 LABELS_TO_SCORE = ["yes", "no"]
 
 # ============================================================
-# 3. MODEL INITIALIZATION
+# 3. MODEL INITIALIZATION (Loads only ONCE for all tests)
 # ============================================================
 print(f"Initializing {MODEL_ID} on {DEVICE.upper()}...")
 processor = AutoProcessor.from_pretrained(MODEL_ID, trust_remote_code=True)
@@ -113,7 +110,7 @@ def get_refinement_prompt(technique, meme_text):
             "Conclude strictly with 'FINAL VERDICT: Yes' or 'FINAL VERDICT: No'."
         )
 
-def run_prediction(image_obj, meme_text):
+def run_prediction(image_obj, meme_text, technique):
     prompt = get_simple_hate_prompt(meme_text)
     probs = get_label_likelihoods(image_obj, prompt)
     
@@ -132,7 +129,7 @@ def run_prediction(image_obj, meme_text):
     if confidence_score >= CONFIDENCE_THRESHOLD:
         return initial_pred, initial_reason, probs, False, None, initial_pred
 
-    refinement_prompt = get_refinement_prompt(TECHNIQUE, meme_text)
+    refinement_prompt = get_refinement_prompt(technique, meme_text)
     
     ref_messages = [{"role": "user", "content": [{"type": "image", "image": image_obj}, {"type": "text", "text": refinement_prompt}]}]
     ref_text_prompt = processor.apply_chat_template(ref_messages, tokenize=False, add_generation_prompt=True)
@@ -140,7 +137,6 @@ def run_prediction(image_obj, meme_text):
     ref_inputs = processor(text=[ref_text_prompt], images=ref_image_inputs, return_tensors="pt").to(model.device)
     
     with torch.no_grad():
-        # Allowed up to 400 tokens because Dynamic Q&A takes a lot of text to generate
         ref_gen_ids = model.generate(**ref_inputs, max_new_tokens=400, do_sample=False)
         
     ref_reasoning = processor.batch_decode([ref_gen_ids[0][ref_inputs.input_ids.shape[1]:]], skip_special_tokens=True)[0].strip()
@@ -155,66 +151,70 @@ def run_prediction(image_obj, meme_text):
     return final_pred, initial_reason, probs, True, ref_reasoning, initial_pred
 
 def main():
-    print(f"--- ABLATION EXPERIMENT ---")
-    print(f"Technique: {TECHNIQUE.upper()}")
-    print(f"Threshold: {CONFIDENCE_THRESHOLD}")
-    print(f"---------------------------\n")
-    
-    dataset = load_dataset(DATASET_ID, split="train", streaming=True)
-    results = []
-    
-    with jsonlines.open(LOG_FILE, mode="w") as writer:
-        for i, item in enumerate(dataset):
-            if i >= MAX_RECORDS: break
+    # Loop over every technique in the array
+    for current_technique in TECHNIQUES:
+        print(f"\n\n{'='*140}")
+        print(f"🚀 STARTING ABLATION EXPERIMENT: {current_technique.upper()}")
+        print(f"Threshold: {CONFIDENCE_THRESHOLD}")
+        print(f"{'='*140}\n")
+        
+        # Create a unique log file for this specific technique
+        LOG_FILE = os.path.join(BASE_OUTPUT, f"Step2_{current_technique}_t{CONFIDENCE_THRESHOLD}_predictions.jsonl")
+        
+        # Reload dataset stream for each technique loop
+        dataset = load_dataset(DATASET_ID, split="train", streaming=True)
+        results = []
+        
+        with jsonlines.open(LOG_FILE, mode="w") as writer:
+            for i, item in enumerate(dataset):
+                if i >= MAX_RECORDS: break
 
-            image = item.get("image")
-            text = item.get("text", "")
-            gt = "yes" if item.get("label") == 1 else "no"
-            
-            final_pred, initial_reason, probs, was_refined, ref_reason, initial_pred = run_prediction(image, text)
-            
-            conf_score = probs[initial_pred]
-            print(f"[{i+1}/{MAX_RECORDS}] ID: {item['id']} | Init Pred: {initial_pred.upper()} (Conf: {conf_score:.4f})", end="")
-            
-            if was_refined:
-                print(f" -> ⚠️ Refined ({TECHNIQUE}) -> Final: {final_pred.upper()} | GT: {gt.upper()}")
-            else:
-                print(f" -> ✅ Skipped | GT: {gt.upper()}")
-            
-            row = {
-                "id": item['id'], "meme_text": text, "ground_truth": gt,
-                "initial_prediction": initial_pred, "final_prediction": final_pred, 
-                "was_refined": was_refined, "confidence_score": conf_score,
-                "likelihoods": probs, "initial_reason": initial_reason,
-                "refined_reasoning": ref_reason if was_refined else "N/A - High Confidence",
-                "is_correct": (final_pred == gt)
-            }
-            writer.write(row)
-            results.append(row)
+                image = item.get("image")
+                text = item.get("text", "")
+                gt = "yes" if item.get("label") == 1 else "no"
+                
+                final_pred, initial_reason, probs, was_refined, ref_reason, initial_pred = run_prediction(image, text, current_technique)
+                
+                conf_score = probs[initial_pred]
+                print(f"[{i+1}/{MAX_RECORDS}] ID: {item['id']} | Init: {initial_pred.upper()} (Conf: {conf_score:.4f})", end="")
+                
+                if was_refined:
+                    print(f" -> ⚠️ Refined ({current_technique}) -> Final: {final_pred.upper()} | GT: {gt.upper()}")
+                else:
+                    print(f" -> ✅ Skipped | GT: {gt.upper()}")
+                
+                row = {
+                    "id": item['id'], "meme_text": text, "ground_truth": gt,
+                    "initial_prediction": initial_pred, "final_prediction": final_pred, 
+                    "was_refined": was_refined, "confidence_score": conf_score,
+                    "likelihoods": probs, "initial_reason": initial_reason,
+                    "refined_reasoning": ref_reason if was_refined else "N/A - High Confidence",
+                    "is_correct": (final_pred == gt)
+                }
+                writer.write(row)
+                results.append(row)
 
-    y_true = [1 if r['ground_truth'] == 'yes' else 0 for r in results]
-    y_pred = [1 if r['final_prediction'] == 'yes' else 0 for r in results]
-    refined_count = sum([1 for r in results if r['was_refined']])
+        y_true = [1 if r['ground_truth'] == 'yes' else 0 for r in results]
+        y_pred = [1 if r['final_prediction'] == 'yes' else 0 for r in results]
+        refined_count = sum([1 for r in results if r['was_refined']])
 
-    print("\n" + "="*140)
-    print("ABLATION RESULTS")
-    print("="*140)
-    print(f"{'Technique':<35} : {TECHNIQUE}")
-    print(f"{'Threshold':<35} : {CONFIDENCE_THRESHOLD}")
-    print(f"{'Records Refined':<35} : {refined_count} / {MAX_RECORDS}")
-    print("-" * 140)
-    print(f"{'Accuracy':<20}: {accuracy_score(y_true, y_pred):.4f}")
-    print(f"{'Macro F1':<20}: {f1_score(y_true, y_pred, average='macro'):.4f}")
+        print("\n" + "="*140)
+        print(f"RESULTS FOR: {current_technique.upper()}")
+        print("="*140)
+        print(f"{'Records Refined':<35} : {refined_count} / {MAX_RECORDS}")
+        print("-" * 140)
+        print(f"{'Accuracy':<20}: {accuracy_score(y_true, y_pred):.4f}")
+        print(f"{'Macro F1':<20}: {f1_score(y_true, y_pred, average='macro'):.4f}")
 
-    print("\n" + "="*140)
-    print("CLASS-WISE METRICS")
-    print("="*140)
-    print(f"{'Class':<20} {'Precision':<15} {'Recall':<15} {'F1':<15} {'Support':<10}")
-    p, r, f, s = precision_recall_fscore_support(y_true, y_pred, labels=[0, 1])
-    class_names = ['non-hateful', 'hateful']
-    for idx, name in enumerate(class_names):
-        print(f"{name:<20} {p[idx]:<15.4f} {r[idx]:<15.4f} {f[idx]:<15.4f} {s[idx]:<10}")
-    print(f"Log file saved to: {LOG_FILE}\n")
+        print("\n" + "="*140)
+        print("CLASS-WISE METRICS")
+        print("="*140)
+        print(f"{'Class':<20} {'Precision':<15} {'Recall':<15} {'F1':<15} {'Support':<10}")
+        p, r, f, s = precision_recall_fscore_support(y_true, y_pred, labels=[0, 1])
+        class_names = ['non-hateful', 'hateful']
+        for idx, name in enumerate(class_names):
+            print(f"{name:<20} {p[idx]:<15.4f} {r[idx]:<15.4f} {f[idx]:<15.4f} {s[idx]:<10}")
+        print(f"Log file saved to: {LOG_FILE}\n")
 
 if __name__ == "__main__":
     main()
