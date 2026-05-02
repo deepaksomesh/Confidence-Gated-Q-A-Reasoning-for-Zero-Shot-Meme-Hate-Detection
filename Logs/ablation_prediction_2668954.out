@@ -1,0 +1,527 @@
+========================================
+Job started: Fri May  1 16:16:51 CEST 2026
+Node: node101
+Job ID: 2668954
+========================================
+--- GPU CHECK ---
+Fri May  1 16:16:53 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.95.05              Driver Version: 580.95.05      CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA RTX 4000 Ada Gene...    Off |   00000000:A1:00.0 Off |                  Off |
+| 30%   45C    P0              3W /  130W |       0MiB /  20475MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+PyTorch CUDA Available: True
+-----------------
+Running Confidence-Gated Ablation Pipeline...
+Initializing Qwen/Qwen3-VL-8B-Instruct on CUDA...
+
+
+============================================================================================================================================
+🚀 STARTING ABLATION EXPERIMENT: ATOMIC
+Threshold: 0.95
+============================================================================================================================================
+
+[1/100] ID: 1235 | Init: NO (Conf: 0.2689) -> ⚠️ Refined (atomic) -> Final: NO | GT: YES
+[2/100] ID: 1236 | Init: YES (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[3/100] ID: 1243 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[4/100] ID: 1245 | Init: NO (Conf: 0.9466) -> ⚠️ Refined (atomic) -> Final: NO | GT: YES
+[5/100] ID: 1247 | Init: YES (Conf: 0.9990) -> ✅ Skipped | GT: YES
+[6/100] ID: 1256 | Init: YES (Conf: 0.9991) -> ✅ Skipped | GT: YES
+[7/100] ID: 1258 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: NO
+[8/100] ID: 1264 | Init: NO (Conf: 0.9841) -> ✅ Skipped | GT: NO
+[9/100] ID: 1269 | Init: YES (Conf: 0.9994) -> ✅ Skipped | GT: YES
+[10/100] ID: 1274 | Init: YES (Conf: 0.9994) -> ✅ Skipped | GT: NO
+[11/100] ID: 1275 | Init: YES (Conf: 0.9990) -> ✅ Skipped | GT: NO
+[12/100] ID: 1276 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[13/100] ID: 1293 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[14/100] ID: 1295 | Init: YES (Conf: 0.9998) -> ✅ Skipped | GT: YES
+[15/100] ID: 1327 | Init: NO (Conf: 0.9579) -> ✅ Skipped | GT: NO
+[16/100] ID: 1329 | Init: YES (Conf: 0.9859) -> ✅ Skipped | GT: YES
+[17/100] ID: 1348 | Init: YES (Conf: 0.9998) -> ✅ Skipped | GT: NO
+[18/100] ID: 1349 | Init: YES (Conf: 0.9999) -> ✅ Skipped | GT: YES
+[19/100] ID: 1379 | Init: NO (Conf: 0.9859) -> ✅ Skipped | GT: NO
+[20/100] ID: 1382 | Init: NO (Conf: 0.9995) -> ✅ Skipped | GT: NO
+[21/100] ID: 1389 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[22/100] ID: 1392 | Init: NO (Conf: 0.9988) -> ✅ Skipped | GT: NO
+[23/100] ID: 1395 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[24/100] ID: 1423 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[25/100] ID: 1436 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[26/100] ID: 1439 | Init: NO (Conf: 0.2018) -> ⚠️ Refined (atomic) -> Final: NO | GT: NO
+[27/100] ID: 1452 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[28/100] ID: 1465 | Init: YES (Conf: 0.9990) -> ✅ Skipped | GT: NO
+[29/100] ID: 1467 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: NO
+[30/100] ID: 1468 | Init: YES (Conf: 0.9959) -> ✅ Skipped | GT: NO
+[31/100] ID: 1469 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[32/100] ID: 1472 | Init: NO (Conf: 0.9975) -> ✅ Skipped | GT: NO
+[33/100] ID: 1475 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[34/100] ID: 1476 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[35/100] ID: 1483 | Init: NO (Conf: 0.8808) -> ⚠️ Refined (atomic) -> Final: YES | GT: NO
+[36/100] ID: 1487 | Init: YES (Conf: 0.9999) -> ✅ Skipped | GT: YES
+[37/100] ID: 1492 | Init: NO (Conf: 0.9983) -> ✅ Skipped | GT: NO
+[38/100] ID: 1497 | Init: YES (Conf: 0.9994) -> ✅ Skipped | GT: YES
+[39/100] ID: 1498 | Init: YES (Conf: 0.9990) -> ✅ Skipped | GT: NO
+[40/100] ID: 1524 | Init: NO (Conf: 0.9241) -> ⚠️ Refined (atomic) -> Final: NO | GT: YES
+[41/100] ID: 1526 | Init: NO (Conf: 0.9975) -> ✅ Skipped | GT: NO
+[42/100] ID: 1527 | Init: NO (Conf: 0.9998) -> ✅ Skipped | GT: NO
+[43/100] ID: 1529 | Init: NO (Conf: 1.0000) -> ✅ Skipped | GT: NO
+[44/100] ID: 1546 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[45/100] ID: 1547 | Init: NO (Conf: 0.0474) -> ⚠️ Refined (atomic) -> Final: YES | GT: NO
+[46/100] ID: 1548 | Init: NO (Conf: 0.9985) -> ✅ Skipped | GT: NO
+[47/100] ID: 1564 | Init: NO (Conf: 0.9948) -> ✅ Skipped | GT: NO
+[48/100] ID: 1568 | Init: YES (Conf: 0.9941) -> ✅ Skipped | GT: YES
+[49/100] ID: 1569 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[50/100] ID: 1576 | Init: NO (Conf: 0.9994) -> ✅ Skipped | GT: NO
+[51/100] ID: 1578 | Init: YES (Conf: 0.9820) -> ✅ Skipped | GT: YES
+[52/100] ID: 1579 | Init: YES (Conf: 0.9876) -> ✅ Skipped | GT: YES
+[53/100] ID: 1589 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[54/100] ID: 1598 | Init: NO (Conf: 0.0180) -> ⚠️ Refined (atomic) -> Final: NO | GT: YES
+[55/100] ID: 1637 | Init: NO (Conf: 0.3208) -> ⚠️ Refined (atomic) -> Final: NO | GT: YES
+[56/100] ID: 1642 | Init: YES (Conf: 0.9998) -> ✅ Skipped | GT: YES
+[57/100] ID: 1643 | Init: YES (Conf: 0.9941) -> ✅ Skipped | GT: NO
+[58/100] ID: 1649 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[59/100] ID: 1653 | Init: NO (Conf: 0.0421) -> ⚠️ Refined (atomic) -> Final: YES | GT: NO
+[60/100] ID: 1658 | Init: NO (Conf: 0.9466) -> ⚠️ Refined (atomic) -> Final: NO | GT: NO
+[61/100] ID: 1672 | Init: NO (Conf: 0.9993) -> ✅ Skipped | GT: NO
+[62/100] ID: 1682 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[63/100] ID: 1694 | Init: YES (Conf: 0.9968) -> ✅ Skipped | GT: NO
+[64/100] ID: 1698 | Init: YES (Conf: 0.9972) -> ✅ Skipped | GT: YES
+[65/100] ID: 1734 | Init: NO (Conf: 0.9770) -> ✅ Skipped | GT: NO
+[66/100] ID: 1736 | Init: NO (Conf: 0.7311) -> ⚠️ Refined (atomic) -> Final: YES | GT: NO
+[67/100] ID: 1743 | Init: NO (Conf: 0.9914) -> ✅ Skipped | GT: NO
+[68/100] ID: 1746 | Init: NO (Conf: 0.9948) -> ✅ Skipped | GT: NO
+[69/100] ID: 1749 | Init: NO (Conf: 0.7311) -> ⚠️ Refined (atomic) -> Final: NO | GT: NO
+[70/100] ID: 1756 | Init: NO (Conf: 0.9998) -> ✅ Skipped | GT: NO
+[71/100] ID: 1763 | Init: NO (Conf: 0.9959) -> ✅ Skipped | GT: NO
+[72/100] ID: 1793 | Init: YES (Conf: 0.9999) -> ✅ Skipped | GT: YES
+[73/100] ID: 1794 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[74/100] ID: 1823 | Init: NO (Conf: 0.2942) -> ⚠️ Refined (atomic) -> Final: YES | GT: NO
+[75/100] ID: 1827 | Init: NO (Conf: 0.9890) -> ✅ Skipped | GT: NO
+[76/100] ID: 1829 | Init: NO (Conf: 0.9983) -> ✅ Skipped | GT: NO
+[77/100] ID: 1835 | Init: NO (Conf: 0.7058) -> ⚠️ Refined (atomic) -> Final: YES | GT: NO
+[78/100] ID: 1842 | Init: YES (Conf: 0.9968) -> ✅ Skipped | GT: NO
+[79/100] ID: 1845 | Init: NO (Conf: 0.9579) -> ✅ Skipped | GT: NO
+[80/100] ID: 1854 | Init: YES (Conf: 0.9820) -> ✅ Skipped | GT: YES
+[81/100] ID: 1875 | Init: NO (Conf: 0.9627) -> ✅ Skipped | GT: NO
+[82/100] ID: 1892 | Init: NO (Conf: 0.9964) -> ✅ Skipped | GT: NO
+[83/100] ID: 1894 | Init: NO (Conf: 0.9924) -> ✅ Skipped | GT: NO
+[84/100] ID: 1896 | Init: YES (Conf: 0.9988) -> ✅ Skipped | GT: NO
+[85/100] ID: 1924 | Init: YES (Conf: 0.9995) -> ✅ Skipped | GT: YES
+[86/100] ID: 1943 | Init: NO (Conf: 0.9997) -> ✅ Skipped | GT: YES
+[87/100] ID: 1953 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[88/100] ID: 1954 | Init: YES (Conf: 0.9990) -> ✅ Skipped | GT: NO
+[89/100] ID: 1956 | Init: NO (Conf: 0.9968) -> ✅ Skipped | GT: NO
+[90/100] ID: 1962 | Init: NO (Conf: 0.9997) -> ✅ Skipped | GT: NO
+[91/100] ID: 1972 | Init: NO (Conf: 0.9996) -> ✅ Skipped | GT: NO
+[92/100] ID: 1974 | Init: YES (Conf: 0.9770) -> ✅ Skipped | GT: YES
+[93/100] ID: 1975 | Init: YES (Conf: 0.9968) -> ✅ Skipped | GT: YES
+[94/100] ID: 2139 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[95/100] ID: 2146 | Init: YES (Conf: 0.9991) -> ✅ Skipped | GT: NO
+[96/100] ID: 2153 | Init: NO (Conf: 0.9993) -> ✅ Skipped | GT: NO
+[97/100] ID: 2156 | Init: NO (Conf: 0.9924) -> ✅ Skipped | GT: NO
+[98/100] ID: 2158 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[99/100] ID: 2165 | Init: YES (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[100/100] ID: 2168 | Init: YES (Conf: 0.9992) -> ✅ Skipped | GT: NO
+
+============================================================================================================================================
+RESULTS FOR: ATOMIC
+============================================================================================================================================
+Records Refined                     : 14 / 100
+--------------------------------------------------------------------------------------------------------------------------------------------
+Accuracy            : 0.7100
+Macro F1            : 0.7050
+
+============================================================================================================================================
+CLASS-WISE METRICS
+============================================================================================================================================
+Class                Precision       Recall          F1              Support   
+non-hateful          0.8750          0.6462          0.7434          65        
+hateful              0.5577          0.8286          0.6667          35        
+Log file saved to: /var/scratch/dsl2632/Confidence-Gated-Q-A-Reasoning-for-Zero-Shot-Meme-Hate-Detection/Output/Step2_atomic_t0.95_predictions.jsonl
+
+
+
+============================================================================================================================================
+🚀 STARTING ABLATION EXPERIMENT: DYNAMIC_QA
+Threshold: 0.95
+============================================================================================================================================
+
+[1/100] ID: 1235 | Init: NO (Conf: 0.2689) -> ⚠️ Refined (dynamic_qa) -> Final: YES | GT: YES
+[2/100] ID: 1236 | Init: YES (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[3/100] ID: 1243 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[4/100] ID: 1245 | Init: NO (Conf: 0.9466) -> ⚠️ Refined (dynamic_qa) -> Final: NO | GT: YES
+[5/100] ID: 1247 | Init: YES (Conf: 0.9990) -> ✅ Skipped | GT: YES
+[6/100] ID: 1256 | Init: YES (Conf: 0.9991) -> ✅ Skipped | GT: YES
+[7/100] ID: 1258 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: NO
+[8/100] ID: 1264 | Init: NO (Conf: 0.9841) -> ✅ Skipped | GT: NO
+[9/100] ID: 1269 | Init: YES (Conf: 0.9994) -> ✅ Skipped | GT: YES
+[10/100] ID: 1274 | Init: YES (Conf: 0.9994) -> ✅ Skipped | GT: NO
+[11/100] ID: 1275 | Init: YES (Conf: 0.9990) -> ✅ Skipped | GT: NO
+[12/100] ID: 1276 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[13/100] ID: 1293 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[14/100] ID: 1295 | Init: YES (Conf: 0.9998) -> ✅ Skipped | GT: YES
+[15/100] ID: 1327 | Init: NO (Conf: 0.9579) -> ✅ Skipped | GT: NO
+[16/100] ID: 1329 | Init: YES (Conf: 0.9859) -> ✅ Skipped | GT: YES
+[17/100] ID: 1348 | Init: YES (Conf: 0.9998) -> ✅ Skipped | GT: NO
+[18/100] ID: 1349 | Init: YES (Conf: 0.9999) -> ✅ Skipped | GT: YES
+[19/100] ID: 1379 | Init: NO (Conf: 0.9859) -> ✅ Skipped | GT: NO
+[20/100] ID: 1382 | Init: NO (Conf: 0.9995) -> ✅ Skipped | GT: NO
+[21/100] ID: 1389 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[22/100] ID: 1392 | Init: NO (Conf: 0.9988) -> ✅ Skipped | GT: NO
+[23/100] ID: 1395 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[24/100] ID: 1423 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[25/100] ID: 1436 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[26/100] ID: 1439 | Init: NO (Conf: 0.2018) -> ⚠️ Refined (dynamic_qa) -> Final: NO | GT: NO
+[27/100] ID: 1452 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[28/100] ID: 1465 | Init: YES (Conf: 0.9990) -> ✅ Skipped | GT: NO
+[29/100] ID: 1467 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: NO
+[30/100] ID: 1468 | Init: YES (Conf: 0.9959) -> ✅ Skipped | GT: NO
+[31/100] ID: 1469 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[32/100] ID: 1472 | Init: NO (Conf: 0.9975) -> ✅ Skipped | GT: NO
+[33/100] ID: 1475 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[34/100] ID: 1476 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[35/100] ID: 1483 | Init: NO (Conf: 0.8808) -> ⚠️ Refined (dynamic_qa) -> Final: YES | GT: NO
+[36/100] ID: 1487 | Init: YES (Conf: 0.9999) -> ✅ Skipped | GT: YES
+[37/100] ID: 1492 | Init: NO (Conf: 0.9983) -> ✅ Skipped | GT: NO
+[38/100] ID: 1497 | Init: YES (Conf: 0.9994) -> ✅ Skipped | GT: YES
+[39/100] ID: 1498 | Init: YES (Conf: 0.9990) -> ✅ Skipped | GT: NO
+[40/100] ID: 1524 | Init: NO (Conf: 0.9241) -> ⚠️ Refined (dynamic_qa) -> Final: NO | GT: YES
+[41/100] ID: 1526 | Init: NO (Conf: 0.9975) -> ✅ Skipped | GT: NO
+[42/100] ID: 1527 | Init: NO (Conf: 0.9998) -> ✅ Skipped | GT: NO
+[43/100] ID: 1529 | Init: NO (Conf: 1.0000) -> ✅ Skipped | GT: NO
+[44/100] ID: 1546 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[45/100] ID: 1547 | Init: NO (Conf: 0.0474) -> ⚠️ Refined (dynamic_qa) -> Final: YES | GT: NO
+[46/100] ID: 1548 | Init: NO (Conf: 0.9985) -> ✅ Skipped | GT: NO
+[47/100] ID: 1564 | Init: NO (Conf: 0.9948) -> ✅ Skipped | GT: NO
+[48/100] ID: 1568 | Init: YES (Conf: 0.9941) -> ✅ Skipped | GT: YES
+[49/100] ID: 1569 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[50/100] ID: 1576 | Init: NO (Conf: 0.9994) -> ✅ Skipped | GT: NO
+[51/100] ID: 1578 | Init: YES (Conf: 0.9820) -> ✅ Skipped | GT: YES
+[52/100] ID: 1579 | Init: YES (Conf: 0.9876) -> ✅ Skipped | GT: YES
+[53/100] ID: 1589 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[54/100] ID: 1598 | Init: NO (Conf: 0.0180) -> ⚠️ Refined (dynamic_qa) -> Final: YES | GT: YES
+[55/100] ID: 1637 | Init: NO (Conf: 0.3208) -> ⚠️ Refined (dynamic_qa) -> Final: YES | GT: YES
+[56/100] ID: 1642 | Init: YES (Conf: 0.9998) -> ✅ Skipped | GT: YES
+[57/100] ID: 1643 | Init: YES (Conf: 0.9941) -> ✅ Skipped | GT: NO
+[58/100] ID: 1649 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[59/100] ID: 1653 | Init: NO (Conf: 0.0421) -> ⚠️ Refined (dynamic_qa) -> Final: YES | GT: NO
+[60/100] ID: 1658 | Init: NO (Conf: 0.9466) -> ⚠️ Refined (dynamic_qa) -> Final: NO | GT: NO
+[61/100] ID: 1672 | Init: NO (Conf: 0.9993) -> ✅ Skipped | GT: NO
+[62/100] ID: 1682 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[63/100] ID: 1694 | Init: YES (Conf: 0.9968) -> ✅ Skipped | GT: NO
+[64/100] ID: 1698 | Init: YES (Conf: 0.9972) -> ✅ Skipped | GT: YES
+[65/100] ID: 1734 | Init: NO (Conf: 0.9770) -> ✅ Skipped | GT: NO
+[66/100] ID: 1736 | Init: NO (Conf: 0.7311) -> ⚠️ Refined (dynamic_qa) -> Final: NO | GT: NO
+[67/100] ID: 1743 | Init: NO (Conf: 0.9914) -> ✅ Skipped | GT: NO
+[68/100] ID: 1746 | Init: NO (Conf: 0.9948) -> ✅ Skipped | GT: NO
+[69/100] ID: 1749 | Init: NO (Conf: 0.7311) -> ⚠️ Refined (dynamic_qa) -> Final: NO | GT: NO
+[70/100] ID: 1756 | Init: NO (Conf: 0.9998) -> ✅ Skipped | GT: NO
+[71/100] ID: 1763 | Init: NO (Conf: 0.9959) -> ✅ Skipped | GT: NO
+[72/100] ID: 1793 | Init: YES (Conf: 0.9999) -> ✅ Skipped | GT: YES
+[73/100] ID: 1794 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[74/100] ID: 1823 | Init: NO (Conf: 0.2942) -> ⚠️ Refined (dynamic_qa) -> Final: NO | GT: NO
+[75/100] ID: 1827 | Init: NO (Conf: 0.9890) -> ✅ Skipped | GT: NO
+[76/100] ID: 1829 | Init: NO (Conf: 0.9983) -> ✅ Skipped | GT: NO
+[77/100] ID: 1835 | Init: NO (Conf: 0.7058) -> ⚠️ Refined (dynamic_qa) -> Final: NO | GT: NO
+[78/100] ID: 1842 | Init: YES (Conf: 0.9968) -> ✅ Skipped | GT: NO
+[79/100] ID: 1845 | Init: NO (Conf: 0.9579) -> ✅ Skipped | GT: NO
+[80/100] ID: 1854 | Init: YES (Conf: 0.9820) -> ✅ Skipped | GT: YES
+[81/100] ID: 1875 | Init: NO (Conf: 0.9627) -> ✅ Skipped | GT: NO
+[82/100] ID: 1892 | Init: NO (Conf: 0.9964) -> ✅ Skipped | GT: NO
+[83/100] ID: 1894 | Init: NO (Conf: 0.9924) -> ✅ Skipped | GT: NO
+[84/100] ID: 1896 | Init: YES (Conf: 0.9988) -> ✅ Skipped | GT: NO
+[85/100] ID: 1924 | Init: YES (Conf: 0.9995) -> ✅ Skipped | GT: YES
+[86/100] ID: 1943 | Init: NO (Conf: 0.9997) -> ✅ Skipped | GT: YES
+[87/100] ID: 1953 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[88/100] ID: 1954 | Init: YES (Conf: 0.9990) -> ✅ Skipped | GT: NO
+[89/100] ID: 1956 | Init: NO (Conf: 0.9968) -> ✅ Skipped | GT: NO
+[90/100] ID: 1962 | Init: NO (Conf: 0.9997) -> ✅ Skipped | GT: NO
+[91/100] ID: 1972 | Init: NO (Conf: 0.9996) -> ✅ Skipped | GT: NO
+[92/100] ID: 1974 | Init: YES (Conf: 0.9770) -> ✅ Skipped | GT: YES
+[93/100] ID: 1975 | Init: YES (Conf: 0.9968) -> ✅ Skipped | GT: YES
+[94/100] ID: 2139 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[95/100] ID: 2146 | Init: YES (Conf: 0.9991) -> ✅ Skipped | GT: NO
+[96/100] ID: 2153 | Init: NO (Conf: 0.9993) -> ✅ Skipped | GT: NO
+[97/100] ID: 2156 | Init: NO (Conf: 0.9924) -> ✅ Skipped | GT: NO
+[98/100] ID: 2158 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[99/100] ID: 2165 | Init: YES (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[100/100] ID: 2168 | Init: YES (Conf: 0.9992) -> ✅ Skipped | GT: NO
+
+============================================================================================================================================
+RESULTS FOR: DYNAMIC_QA
+============================================================================================================================================
+Records Refined                     : 14 / 100
+--------------------------------------------------------------------------------------------------------------------------------------------
+Accuracy            : 0.7700
+Macro F1            : 0.7660
+
+============================================================================================================================================
+CLASS-WISE METRICS
+============================================================================================================================================
+Class                Precision       Recall          F1              Support   
+non-hateful          0.9375          0.6923          0.7965          65        
+hateful              0.6154          0.9143          0.7356          35        
+Log file saved to: /var/scratch/dsl2632/Confidence-Gated-Q-A-Reasoning-for-Zero-Shot-Meme-Hate-Detection/Output/Step2_dynamic_qa_t0.95_predictions.jsonl
+
+
+
+============================================================================================================================================
+🚀 STARTING ABLATION EXPERIMENT: STATIC_QA
+Threshold: 0.95
+============================================================================================================================================
+
+[1/100] ID: 1235 | Init: NO (Conf: 0.2689) -> ⚠️ Refined (static_qa) -> Final: YES | GT: YES
+[2/100] ID: 1236 | Init: YES (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[3/100] ID: 1243 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[4/100] ID: 1245 | Init: NO (Conf: 0.9466) -> ⚠️ Refined (static_qa) -> Final: YES | GT: YES
+[5/100] ID: 1247 | Init: YES (Conf: 0.9990) -> ✅ Skipped | GT: YES
+[6/100] ID: 1256 | Init: YES (Conf: 0.9991) -> ✅ Skipped | GT: YES
+[7/100] ID: 1258 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: NO
+[8/100] ID: 1264 | Init: NO (Conf: 0.9841) -> ✅ Skipped | GT: NO
+[9/100] ID: 1269 | Init: YES (Conf: 0.9994) -> ✅ Skipped | GT: YES
+[10/100] ID: 1274 | Init: YES (Conf: 0.9994) -> ✅ Skipped | GT: NO
+[11/100] ID: 1275 | Init: YES (Conf: 0.9990) -> ✅ Skipped | GT: NO
+[12/100] ID: 1276 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[13/100] ID: 1293 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[14/100] ID: 1295 | Init: YES (Conf: 0.9998) -> ✅ Skipped | GT: YES
+[15/100] ID: 1327 | Init: NO (Conf: 0.9579) -> ✅ Skipped | GT: NO
+[16/100] ID: 1329 | Init: YES (Conf: 0.9859) -> ✅ Skipped | GT: YES
+[17/100] ID: 1348 | Init: YES (Conf: 0.9998) -> ✅ Skipped | GT: NO
+[18/100] ID: 1349 | Init: YES (Conf: 0.9999) -> ✅ Skipped | GT: YES
+[19/100] ID: 1379 | Init: NO (Conf: 0.9859) -> ✅ Skipped | GT: NO
+[20/100] ID: 1382 | Init: NO (Conf: 0.9995) -> ✅ Skipped | GT: NO
+[21/100] ID: 1389 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[22/100] ID: 1392 | Init: NO (Conf: 0.9988) -> ✅ Skipped | GT: NO
+[23/100] ID: 1395 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[24/100] ID: 1423 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[25/100] ID: 1436 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[26/100] ID: 1439 | Init: NO (Conf: 0.2018) -> ⚠️ Refined (static_qa) -> Final: YES | GT: NO
+[27/100] ID: 1452 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[28/100] ID: 1465 | Init: YES (Conf: 0.9990) -> ✅ Skipped | GT: NO
+[29/100] ID: 1467 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: NO
+[30/100] ID: 1468 | Init: YES (Conf: 0.9959) -> ✅ Skipped | GT: NO
+[31/100] ID: 1469 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[32/100] ID: 1472 | Init: NO (Conf: 0.9975) -> ✅ Skipped | GT: NO
+[33/100] ID: 1475 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[34/100] ID: 1476 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[35/100] ID: 1483 | Init: NO (Conf: 0.8808) -> ⚠️ Refined (static_qa) -> Final: YES | GT: NO
+[36/100] ID: 1487 | Init: YES (Conf: 0.9999) -> ✅ Skipped | GT: YES
+[37/100] ID: 1492 | Init: NO (Conf: 0.9983) -> ✅ Skipped | GT: NO
+[38/100] ID: 1497 | Init: YES (Conf: 0.9994) -> ✅ Skipped | GT: YES
+[39/100] ID: 1498 | Init: YES (Conf: 0.9990) -> ✅ Skipped | GT: NO
+[40/100] ID: 1524 | Init: NO (Conf: 0.9241) -> ⚠️ Refined (static_qa) -> Final: NO | GT: YES
+[41/100] ID: 1526 | Init: NO (Conf: 0.9975) -> ✅ Skipped | GT: NO
+[42/100] ID: 1527 | Init: NO (Conf: 0.9998) -> ✅ Skipped | GT: NO
+[43/100] ID: 1529 | Init: NO (Conf: 1.0000) -> ✅ Skipped | GT: NO
+[44/100] ID: 1546 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[45/100] ID: 1547 | Init: NO (Conf: 0.0474) -> ⚠️ Refined (static_qa) -> Final: YES | GT: NO
+[46/100] ID: 1548 | Init: NO (Conf: 0.9985) -> ✅ Skipped | GT: NO
+[47/100] ID: 1564 | Init: NO (Conf: 0.9948) -> ✅ Skipped | GT: NO
+[48/100] ID: 1568 | Init: YES (Conf: 0.9941) -> ✅ Skipped | GT: YES
+[49/100] ID: 1569 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[50/100] ID: 1576 | Init: NO (Conf: 0.9994) -> ✅ Skipped | GT: NO
+[51/100] ID: 1578 | Init: YES (Conf: 0.9820) -> ✅ Skipped | GT: YES
+[52/100] ID: 1579 | Init: YES (Conf: 0.9876) -> ✅ Skipped | GT: YES
+[53/100] ID: 1589 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[54/100] ID: 1598 | Init: NO (Conf: 0.0180) -> ⚠️ Refined (static_qa) -> Final: YES | GT: YES
+[55/100] ID: 1637 | Init: NO (Conf: 0.3208) -> ⚠️ Refined (static_qa) -> Final: YES | GT: YES
+[56/100] ID: 1642 | Init: YES (Conf: 0.9998) -> ✅ Skipped | GT: YES
+[57/100] ID: 1643 | Init: YES (Conf: 0.9941) -> ✅ Skipped | GT: NO
+[58/100] ID: 1649 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[59/100] ID: 1653 | Init: NO (Conf: 0.0421) -> ⚠️ Refined (static_qa) -> Final: YES | GT: NO
+[60/100] ID: 1658 | Init: NO (Conf: 0.9466) -> ⚠️ Refined (static_qa) -> Final: NO | GT: NO
+[61/100] ID: 1672 | Init: NO (Conf: 0.9993) -> ✅ Skipped | GT: NO
+[62/100] ID: 1682 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[63/100] ID: 1694 | Init: YES (Conf: 0.9968) -> ✅ Skipped | GT: NO
+[64/100] ID: 1698 | Init: YES (Conf: 0.9972) -> ✅ Skipped | GT: YES
+[65/100] ID: 1734 | Init: NO (Conf: 0.9770) -> ✅ Skipped | GT: NO
+[66/100] ID: 1736 | Init: NO (Conf: 0.7311) -> ⚠️ Refined (static_qa) -> Final: YES | GT: NO
+[67/100] ID: 1743 | Init: NO (Conf: 0.9914) -> ✅ Skipped | GT: NO
+[68/100] ID: 1746 | Init: NO (Conf: 0.9948) -> ✅ Skipped | GT: NO
+[69/100] ID: 1749 | Init: NO (Conf: 0.7311) -> ⚠️ Refined (static_qa) -> Final: YES | GT: NO
+[70/100] ID: 1756 | Init: NO (Conf: 0.9998) -> ✅ Skipped | GT: NO
+[71/100] ID: 1763 | Init: NO (Conf: 0.9959) -> ✅ Skipped | GT: NO
+[72/100] ID: 1793 | Init: YES (Conf: 0.9999) -> ✅ Skipped | GT: YES
+[73/100] ID: 1794 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[74/100] ID: 1823 | Init: NO (Conf: 0.2942) -> ⚠️ Refined (static_qa) -> Final: YES | GT: NO
+[75/100] ID: 1827 | Init: NO (Conf: 0.9890) -> ✅ Skipped | GT: NO
+[76/100] ID: 1829 | Init: NO (Conf: 0.9983) -> ✅ Skipped | GT: NO
+[77/100] ID: 1835 | Init: NO (Conf: 0.7058) -> ⚠️ Refined (static_qa) -> Final: YES | GT: NO
+[78/100] ID: 1842 | Init: YES (Conf: 0.9968) -> ✅ Skipped | GT: NO
+[79/100] ID: 1845 | Init: NO (Conf: 0.9579) -> ✅ Skipped | GT: NO
+[80/100] ID: 1854 | Init: YES (Conf: 0.9820) -> ✅ Skipped | GT: YES
+[81/100] ID: 1875 | Init: NO (Conf: 0.9627) -> ✅ Skipped | GT: NO
+[82/100] ID: 1892 | Init: NO (Conf: 0.9964) -> ✅ Skipped | GT: NO
+[83/100] ID: 1894 | Init: NO (Conf: 0.9924) -> ✅ Skipped | GT: NO
+[84/100] ID: 1896 | Init: YES (Conf: 0.9988) -> ✅ Skipped | GT: NO
+[85/100] ID: 1924 | Init: YES (Conf: 0.9995) -> ✅ Skipped | GT: YES
+[86/100] ID: 1943 | Init: NO (Conf: 0.9997) -> ✅ Skipped | GT: YES
+[87/100] ID: 1953 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[88/100] ID: 1954 | Init: YES (Conf: 0.9990) -> ✅ Skipped | GT: NO
+[89/100] ID: 1956 | Init: NO (Conf: 0.9968) -> ✅ Skipped | GT: NO
+[90/100] ID: 1962 | Init: NO (Conf: 0.9997) -> ✅ Skipped | GT: NO
+[91/100] ID: 1972 | Init: NO (Conf: 0.9996) -> ✅ Skipped | GT: NO
+[92/100] ID: 1974 | Init: YES (Conf: 0.9770) -> ✅ Skipped | GT: YES
+[93/100] ID: 1975 | Init: YES (Conf: 0.9968) -> ✅ Skipped | GT: YES
+[94/100] ID: 2139 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[95/100] ID: 2146 | Init: YES (Conf: 0.9991) -> ✅ Skipped | GT: NO
+[96/100] ID: 2153 | Init: NO (Conf: 0.9993) -> ✅ Skipped | GT: NO
+[97/100] ID: 2156 | Init: NO (Conf: 0.9924) -> ✅ Skipped | GT: NO
+[98/100] ID: 2158 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[99/100] ID: 2165 | Init: YES (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[100/100] ID: 2168 | Init: YES (Conf: 0.9992) -> ✅ Skipped | GT: NO
+
+============================================================================================================================================
+RESULTS FOR: STATIC_QA
+============================================================================================================================================
+Records Refined                     : 14 / 100
+--------------------------------------------------------------------------------------------------------------------------------------------
+Accuracy            : 0.7300
+Macro F1            : 0.7287
+
+============================================================================================================================================
+CLASS-WISE METRICS
+============================================================================================================================================
+Class                Precision       Recall          F1              Support   
+non-hateful          0.9524          0.6154          0.7477          65        
+hateful              0.5690          0.9429          0.7097          35        
+Log file saved to: /var/scratch/dsl2632/Confidence-Gated-Q-A-Reasoning-for-Zero-Shot-Meme-Hate-Detection/Output/Step2_static_qa_t0.95_predictions.jsonl
+
+
+
+============================================================================================================================================
+🚀 STARTING ABLATION EXPERIMENT: COT
+Threshold: 0.95
+============================================================================================================================================
+
+[1/100] ID: 1235 | Init: NO (Conf: 0.2689) -> ⚠️ Refined (cot) -> Final: NO | GT: YES
+[2/100] ID: 1236 | Init: YES (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[3/100] ID: 1243 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[4/100] ID: 1245 | Init: NO (Conf: 0.9466) -> ⚠️ Refined (cot) -> Final: NO | GT: YES
+[5/100] ID: 1247 | Init: YES (Conf: 0.9990) -> ✅ Skipped | GT: YES
+[6/100] ID: 1256 | Init: YES (Conf: 0.9991) -> ✅ Skipped | GT: YES
+[7/100] ID: 1258 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: NO
+[8/100] ID: 1264 | Init: NO (Conf: 0.9841) -> ✅ Skipped | GT: NO
+[9/100] ID: 1269 | Init: YES (Conf: 0.9994) -> ✅ Skipped | GT: YES
+[10/100] ID: 1274 | Init: YES (Conf: 0.9994) -> ✅ Skipped | GT: NO
+[11/100] ID: 1275 | Init: YES (Conf: 0.9990) -> ✅ Skipped | GT: NO
+[12/100] ID: 1276 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[13/100] ID: 1293 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[14/100] ID: 1295 | Init: YES (Conf: 0.9998) -> ✅ Skipped | GT: YES
+[15/100] ID: 1327 | Init: NO (Conf: 0.9579) -> ✅ Skipped | GT: NO
+[16/100] ID: 1329 | Init: YES (Conf: 0.9859) -> ✅ Skipped | GT: YES
+[17/100] ID: 1348 | Init: YES (Conf: 0.9998) -> ✅ Skipped | GT: NO
+[18/100] ID: 1349 | Init: YES (Conf: 0.9999) -> ✅ Skipped | GT: YES
+[19/100] ID: 1379 | Init: NO (Conf: 0.9859) -> ✅ Skipped | GT: NO
+[20/100] ID: 1382 | Init: NO (Conf: 0.9995) -> ✅ Skipped | GT: NO
+[21/100] ID: 1389 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[22/100] ID: 1392 | Init: NO (Conf: 0.9988) -> ✅ Skipped | GT: NO
+[23/100] ID: 1395 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[24/100] ID: 1423 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[25/100] ID: 1436 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[26/100] ID: 1439 | Init: NO (Conf: 0.2018) -> ⚠️ Refined (cot) -> Final: NO | GT: NO
+[27/100] ID: 1452 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[28/100] ID: 1465 | Init: YES (Conf: 0.9990) -> ✅ Skipped | GT: NO
+[29/100] ID: 1467 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: NO
+[30/100] ID: 1468 | Init: YES (Conf: 0.9959) -> ✅ Skipped | GT: NO
+[31/100] ID: 1469 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[32/100] ID: 1472 | Init: NO (Conf: 0.9975) -> ✅ Skipped | GT: NO
+[33/100] ID: 1475 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[34/100] ID: 1476 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[35/100] ID: 1483 | Init: NO (Conf: 0.8808) -> ⚠️ Refined (cot) -> Final: NO | GT: NO
+[36/100] ID: 1487 | Init: YES (Conf: 0.9999) -> ✅ Skipped | GT: YES
+[37/100] ID: 1492 | Init: NO (Conf: 0.9983) -> ✅ Skipped | GT: NO
+[38/100] ID: 1497 | Init: YES (Conf: 0.9994) -> ✅ Skipped | GT: YES
+[39/100] ID: 1498 | Init: YES (Conf: 0.9990) -> ✅ Skipped | GT: NO
+[40/100] ID: 1524 | Init: NO (Conf: 0.9241) -> ⚠️ Refined (cot) -> Final: NO | GT: YES
+[41/100] ID: 1526 | Init: NO (Conf: 0.9975) -> ✅ Skipped | GT: NO
+[42/100] ID: 1527 | Init: NO (Conf: 0.9998) -> ✅ Skipped | GT: NO
+[43/100] ID: 1529 | Init: NO (Conf: 1.0000) -> ✅ Skipped | GT: NO
+[44/100] ID: 1546 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[45/100] ID: 1547 | Init: NO (Conf: 0.0474) -> ⚠️ Refined (cot) -> Final: YES | GT: NO
+[46/100] ID: 1548 | Init: NO (Conf: 0.9985) -> ✅ Skipped | GT: NO
+[47/100] ID: 1564 | Init: NO (Conf: 0.9948) -> ✅ Skipped | GT: NO
+[48/100] ID: 1568 | Init: YES (Conf: 0.9941) -> ✅ Skipped | GT: YES
+[49/100] ID: 1569 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[50/100] ID: 1576 | Init: NO (Conf: 0.9994) -> ✅ Skipped | GT: NO
+[51/100] ID: 1578 | Init: YES (Conf: 0.9820) -> ✅ Skipped | GT: YES
+[52/100] ID: 1579 | Init: YES (Conf: 0.9876) -> ✅ Skipped | GT: YES
+[53/100] ID: 1589 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[54/100] ID: 1598 | Init: NO (Conf: 0.0180) -> ⚠️ Refined (cot) -> Final: NO | GT: YES
+[55/100] ID: 1637 | Init: NO (Conf: 0.3208) -> ⚠️ Refined (cot) -> Final: NO | GT: YES
+[56/100] ID: 1642 | Init: YES (Conf: 0.9998) -> ✅ Skipped | GT: YES
+[57/100] ID: 1643 | Init: YES (Conf: 0.9941) -> ✅ Skipped | GT: NO
+[58/100] ID: 1649 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[59/100] ID: 1653 | Init: NO (Conf: 0.0421) -> ⚠️ Refined (cot) -> Final: YES | GT: NO
+[60/100] ID: 1658 | Init: NO (Conf: 0.9466) -> ⚠️ Refined (cot) -> Final: NO | GT: NO
+[61/100] ID: 1672 | Init: NO (Conf: 0.9993) -> ✅ Skipped | GT: NO
+[62/100] ID: 1682 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[63/100] ID: 1694 | Init: YES (Conf: 0.9968) -> ✅ Skipped | GT: NO
+[64/100] ID: 1698 | Init: YES (Conf: 0.9972) -> ✅ Skipped | GT: YES
+[65/100] ID: 1734 | Init: NO (Conf: 0.9770) -> ✅ Skipped | GT: NO
+[66/100] ID: 1736 | Init: NO (Conf: 0.7311) -> ⚠️ Refined (cot) -> Final: NO | GT: NO
+[67/100] ID: 1743 | Init: NO (Conf: 0.9914) -> ✅ Skipped | GT: NO
+[68/100] ID: 1746 | Init: NO (Conf: 0.9948) -> ✅ Skipped | GT: NO
+[69/100] ID: 1749 | Init: NO (Conf: 0.7311) -> ⚠️ Refined (cot) -> Final: NO | GT: NO
+[70/100] ID: 1756 | Init: NO (Conf: 0.9998) -> ✅ Skipped | GT: NO
+[71/100] ID: 1763 | Init: NO (Conf: 0.9959) -> ✅ Skipped | GT: NO
+[72/100] ID: 1793 | Init: YES (Conf: 0.9999) -> ✅ Skipped | GT: YES
+[73/100] ID: 1794 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[74/100] ID: 1823 | Init: NO (Conf: 0.2942) -> ⚠️ Refined (cot) -> Final: NO | GT: NO
+[75/100] ID: 1827 | Init: NO (Conf: 0.9890) -> ✅ Skipped | GT: NO
+[76/100] ID: 1829 | Init: NO (Conf: 0.9983) -> ✅ Skipped | GT: NO
+[77/100] ID: 1835 | Init: NO (Conf: 0.7058) -> ⚠️ Refined (cot) -> Final: NO | GT: NO
+[78/100] ID: 1842 | Init: YES (Conf: 0.9968) -> ✅ Skipped | GT: NO
+[79/100] ID: 1845 | Init: NO (Conf: 0.9579) -> ✅ Skipped | GT: NO
+[80/100] ID: 1854 | Init: YES (Conf: 0.9820) -> ✅ Skipped | GT: YES
+[81/100] ID: 1875 | Init: NO (Conf: 0.9627) -> ✅ Skipped | GT: NO
+[82/100] ID: 1892 | Init: NO (Conf: 0.9964) -> ✅ Skipped | GT: NO
+[83/100] ID: 1894 | Init: NO (Conf: 0.9924) -> ✅ Skipped | GT: NO
+[84/100] ID: 1896 | Init: YES (Conf: 0.9988) -> ✅ Skipped | GT: NO
+[85/100] ID: 1924 | Init: YES (Conf: 0.9995) -> ✅ Skipped | GT: YES
+[86/100] ID: 1943 | Init: NO (Conf: 0.9997) -> ✅ Skipped | GT: YES
+[87/100] ID: 1953 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[88/100] ID: 1954 | Init: YES (Conf: 0.9990) -> ✅ Skipped | GT: NO
+[89/100] ID: 1956 | Init: NO (Conf: 0.9968) -> ✅ Skipped | GT: NO
+[90/100] ID: 1962 | Init: NO (Conf: 0.9997) -> ✅ Skipped | GT: NO
+[91/100] ID: 1972 | Init: NO (Conf: 0.9996) -> ✅ Skipped | GT: NO
+[92/100] ID: 1974 | Init: YES (Conf: 0.9770) -> ✅ Skipped | GT: YES
+[93/100] ID: 1975 | Init: YES (Conf: 0.9968) -> ✅ Skipped | GT: YES
+[94/100] ID: 2139 | Init: NO (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[95/100] ID: 2146 | Init: YES (Conf: 0.9991) -> ✅ Skipped | GT: NO
+[96/100] ID: 2153 | Init: NO (Conf: 0.9993) -> ✅ Skipped | GT: NO
+[97/100] ID: 2156 | Init: NO (Conf: 0.9924) -> ✅ Skipped | GT: NO
+[98/100] ID: 2158 | Init: YES (Conf: 1.0000) -> ✅ Skipped | GT: YES
+[99/100] ID: 2165 | Init: YES (Conf: 0.9999) -> ✅ Skipped | GT: NO
+[100/100] ID: 2168 | Init: YES (Conf: 0.9992) -> ✅ Skipped | GT: NO
+
+============================================================================================================================================
+RESULTS FOR: COT
+============================================================================================================================================
+Records Refined                     : 14 / 100
+--------------------------------------------------------------------------------------------------------------------------------------------
+Accuracy            : 0.7500
+Macro F1            : 0.7426
+
+============================================================================================================================================
+CLASS-WISE METRICS
+============================================================================================================================================
+Class                Precision       Recall          F1              Support   
+non-hateful          0.8846          0.7077          0.7863          65        
+hateful              0.6042          0.8286          0.6988          35        
+Log file saved to: /var/scratch/dsl2632/Confidence-Gated-Q-A-Reasoning-for-Zero-Shot-Meme-Hate-Detection/Output/Step2_cot_t0.95_predictions.jsonl
+
+Job finished: Fri May  1 16:52:46 CEST 2026
