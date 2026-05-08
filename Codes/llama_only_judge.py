@@ -24,7 +24,7 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 DTYPE = torch.bfloat16 if torch.cuda.is_available() else torch.float32
 
 # ============================================================
-# 2. LOAD LLAMA-3 (Since it's alone, it fits perfectly!)
+# 2. LOAD LLAMA-3
 # ============================================================
 print(f"Loading Llama-3-8B (The Judge) on {DEVICE.upper()}...")
 llama_tokenizer = AutoTokenizer.from_pretrained(MODEL_ID_LLAMA)
@@ -35,7 +35,7 @@ llama_model = AutoModelForCausalLM.from_pretrained(
 # ============================================================
 # 3. LLAMA JUDGE LOGIC
 # ============================================================
-def get_llama_verdict(meme_text, qwen_qa_facts):
+def get_llama_verdict(meme_text, qwen_qa_facts, qwen_pred):
     llama_system_prompt = "You are an expert, impartial hate speech moderator."
     llama_user_prompt = f"""Another AI analyzed a potentially hateful meme and generated these facts:
     
@@ -53,7 +53,6 @@ Reason step-by-step, then end your response with exactly 'FINAL VERDICT: Yes' or
         {"role": "user", "content": llama_user_prompt}
     ]
     
-    # The correct way to tokenize for Llama 3
     prompt_str = llama_tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
     inputs = llama_tokenizer(prompt_str, return_tensors="pt").to(llama_model.device)
     
@@ -62,12 +61,15 @@ Reason step-by-step, then end your response with exactly 'FINAL VERDICT: Yes' or
         
     llama_response = llama_tokenizer.decode(outputs[0][inputs.input_ids.shape[1]:], skip_special_tokens=True).strip()
 
-    if "FINAL VERDICT: Yes" in llama_response or "final verdict: yes" in llama_response.lower():
+    # MORE FLEXIBLE PARSING & SAFE FALLBACK
+    llama_lower = llama_response.lower()
+    if "verdict: yes" in llama_lower:
         return "yes", llama_response
-    elif "FINAL VERDICT: No" in llama_response or "final verdict: no" in llama_response.lower():
+    elif "verdict: no" in llama_lower:
         return "no", llama_response
     else:
-        return None, llama_response # Fallback
+        # If Llama fails to format exactly, fallback safely to Qwen's original prediction
+        return qwen_pred, llama_response
 
 # ============================================================
 # 4. EXECUTION LOOP
@@ -95,12 +97,13 @@ def main():
                 meme_text = row["meme_text"]
                 qwen_facts = row["refined_reasoning"]
                 
-                llama_pred, llama_reason = get_llama_verdict(meme_text, qwen_facts)
+                # We pass row["final_prediction"] as the safe fallback
+                llama_pred, llama_reason = get_llama_verdict(meme_text, qwen_facts, row["final_prediction"])
                 
                 print(f"ID {row['id']}: Qwen said {row['final_prediction'].upper()} -> Llama says {llama_pred.upper()} | GT: {row['ground_truth'].upper()}")
                 
                 # Overwrite Qwen's prediction with Llama's
-                row["final_prediction"] = llama_pred if llama_pred else row["final_prediction"]
+                row["final_prediction"] = llama_pred
                 row["llama_reasoning"] = llama_reason
                 row["is_correct"] = (row["final_prediction"] == row["ground_truth"])
             else:
