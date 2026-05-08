@@ -1,4 +1,5 @@
 import os
+import re
 import jsonlines
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -95,10 +96,14 @@ def main():
             if row["was_refined"]:
                 judged_count += 1
                 meme_text = row["meme_text"]
-                qwen_facts = row["refined_reasoning"]
+                qwen_facts_raw = row["refined_reasoning"]
                 
-                # We pass row["final_prediction"] as the safe fallback
-                llama_pred, llama_reason = get_llama_verdict(meme_text, qwen_facts, row["final_prediction"])
+                # HIDE Qwen's final verdict so Llama doesn't cheat!
+                # This uses regex to split the text at 'FINAL VERDICT' regardless of capitalization
+                qwen_facts_clean = re.split(r'(?i)final verdict', qwen_facts_raw)[0].strip()
+                
+                # Pass the CLEANED facts to Llama
+                llama_pred, llama_reason = get_llama_verdict(meme_text, qwen_facts_clean, row["final_prediction"])
                 
                 print(f"ID {row['id']}: Qwen said {row['final_prediction'].upper()} -> Llama says {llama_pred.upper()} | GT: {row['ground_truth'].upper()}")
                 
@@ -117,7 +122,7 @@ def main():
     y_pred = [1 if r['final_prediction'] == 'yes' else 0 for r in updated_records]
 
     print("\n" + "="*140)
-    print("FINAL PIPELINE RESULTS (QWEN EXTRACTOR + LLAMA JUDGE)")
+    print("FINAL PIPELINE RESULTS (QWEN EXTRACTOR + BLIND LLAMA JUDGE)")
     print("="*140)
     print(f"{'Records Judged by Llama':<35} : {judged_count} / {len(records)}")
     print("-" * 140)
