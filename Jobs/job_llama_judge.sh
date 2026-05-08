@@ -24,7 +24,7 @@ export HF_HOME=/var/scratch/$USER/Confidence-Gated-Q-A-Reasoning-for-Zero-Shot-M
 # --- YOUR HF TOKEN FOR LLAMA 3 ---
 export HF_TOKEN=$HF_TOKEN
 
-echo "Running Qwen + Llama Dual Pipeline..."
-python -u Codes/llama_judge_prediction.py
+echo "Running Llama-3 Only Judge Pipeline..."
+python -u Codes/llama_only_judge.py
 
 echo "Job finished: $(date)"
