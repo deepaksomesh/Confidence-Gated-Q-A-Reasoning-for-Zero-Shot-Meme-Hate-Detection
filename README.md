@@ -8,7 +8,7 @@ The repository is organized into the following key directories and files:
 
 ```text
 Confidence-Gated-Q-A-Reasoning-for-Zero-Shot-Meme-Hate-Detection/
-├── Codes/                               # Source code for the evaluation pipeline
+├── Codes/                              
 │   ├── initial_prediction_internvl.py   # Step 1 script using InternVL3
 │   ├── initial_prediction_llava.py      # Step 1 script using LLaVA-OneVision
 │   ├── initial_prediction_qwen.py       # Step 1 script using Qwen3-VL
@@ -16,8 +16,8 @@ Confidence-Gated-Q-A-Reasoning-for-Zero-Shot-Meme-Hate-Detection/
 │   ├── confidence_guided_refinement.py  # Step 2 script for confidence-gated reasoning ablation
 │   ├── final_output_evaluation.py       # Step 3 script to generate final tables and plots
 │   └── Output/                          # Auto-generated outputs, logs, metrics, and plots
-├── requirements.txt                     # Project dependencies
-└── README.md                            # Project documentation (this file)
+├── requirements.txt                     
+└── README.md                            
 ```
 
 ## Setup Instructions
@@ -78,7 +78,7 @@ python Codes/confidence_guided_refinement.py
 *This script will use predictions with confidence below the threshold and apply the reasoning prompts to refine the final output.*
 
 ### Step 3: Final Output Evaluation
-This step aggregates the outputs from Step 1 and Step 2 to generate comparative plots, accuracy/macro-F1 tables, and CSV/LaTeX tables for reporting.
+This step aggregates the outputs from Step 1 and Step 2 to generate comparative plots, accuracy/macro-F1 tables, and CSV tables for reporting.
 
 To generate the final results:
 ```bash
@@ -89,5 +89,5 @@ python Codes/final_output_evaluation.py
 Running the pipeline will populate the `Codes/Output` directory with:
 - `jsonl` files containing the predictions, confidence scores, and reasoning text for each meme.
 - `json` files containing detailed class-wise metrics, macro-F1, and accuracy scores.
-- Summarized tables (in CSV and LaTeX formats) inside `Codes/Output/Step3_final_results/tables/`.
-- Visualizations (Bar charts and Threshold plots) inside `Codes/Output/Step3_final_results/plots/`.
+- Summarized tables inside `Codes/Output/Step3_final_results/tables/`.
+- Visualizations inside `Codes/Output/Step3_final_results/plots/`.
