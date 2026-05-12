@@ -8,7 +8,7 @@ The repository is organized into the following key directories and files:
 
 ```text
 Confidence-Gated-Q-A-Reasoning-for-Zero-Shot-Meme-Hate-Detection/
-├── Codes/                               # Source code for the evaluation pipeline
+├── Codes/                              
 │   ├── initial_prediction_internvl.py   # Step 1 script using InternVL3
 │   ├── initial_prediction_llava.py      # Step 1 script using LLaVA-OneVision
 │   ├── initial_prediction_qwen.py       # Step 1 script using Qwen3-VL
@@ -16,8 +16,8 @@ Confidence-Gated-Q-A-Reasoning-for-Zero-Shot-Meme-Hate-Detection/
 │   ├── confidence_guided_refinement.py  # Step 2 script for confidence-gated reasoning ablation
 │   ├── final_output_evaluation.py       # Step 3 script to generate final tables and plots
 │   └── Output/                          # Auto-generated outputs, logs, metrics, and plots
-├── requirements.txt                     # Project dependencies
-└── README.md                            # Project documentation (this file)
+├── requirements.txt                     
+└── README.md                            
 ```
 
 ## Setup Instructions
