@@ -23,7 +23,7 @@ Confidence-Gated-Q-A-Reasoning-for-Zero-Shot-Meme-Hate-Detection/
 ## Setup Instructions
 
 ### Prerequisites
-- Python 3.8+
+- Python 3.9+
 - An environment with GPU support is highly recommended for running Vision-Language Models.
 
 ### Installation
@@ -65,7 +65,7 @@ python Codes/vlm_comparison.py
 ```
 
 ### Step 2: Confidence-Gated Refinement
-Based on the best-performing model from Step 1 (e.g., Qwen3-VL), this step runs an ablation over different **confidence thresholds** (e.g., 0.60, 0.75, 0.85, 0.95) and **reasoning techniques**:
+Based on the best-performing model, Qwen3-VL has the best accuracy. This step runs an ablation over different **confidence thresholds** (e.g., 0.60, 0.75, 0.85, 0.95) and **reasoning techniques** using the Qwen3-VL model:
 - `atomic`: Extracting visual/textual facts before deciding.
 - `static_qa`: Answering predefined target/hostility questions.
 - `dynamic_qa`: Dynamically generating relevant questions to answer.
