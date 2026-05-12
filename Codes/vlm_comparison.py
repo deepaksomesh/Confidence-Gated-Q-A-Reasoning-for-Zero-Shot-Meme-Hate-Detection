@@ -60,8 +60,8 @@ def rank_models(records):
     return sorted(
         records,
         key=lambda row: (
-            row["macro_f1"],
             row["accuracy"],
+            row["macro_f1"],
             row["balanced_accuracy"],
         ),
         reverse=True,
@@ -123,7 +123,7 @@ def print_ranking_table(ranked_records):
     print("\n" + "=" * 100)
     print("SELECTED MODEL")
     print("=" * 100)
-    print(f"Best model based on Macro F1: {best['model_name']}")
+    print(f"Best model based on Accuracy: {best['model_name']}")
     print(f"Model ID: {best['model_id']}")
 
 
