@@ -1,0 +1,38 @@
+========================================
+Job started: Mon May 11 11:15:00 CEST 2026
+Node: node001
+Job ID: 2265219
+========================================
+Python: /home/s4374827/.conda/envs/nlp_env/bin/python
+Running Final Output Evaluation ..
+Loading Step 1 and Step 2 results
+Saved ablation CSV   : /zfsstore/user/s4374827/NLP/Codes/Output/Step3_final_results/tables/Step3_refinement_ablation_table.csv
+Saved comparison CSV : /zfsstore/user/s4374827/NLP/Codes/Output/Step3_final_results/tables/Step3_initial_vs_best_table.csv
+Saved ablation LaTeX : /zfsstore/user/s4374827/NLP/Codes/Output/Step3_final_results/tables/Step3_refinement_ablation_table.tex
+Saved comparison LaTeX: /zfsstore/user/s4374827/NLP/Codes/Output/Step3_final_results/tables/Step3_initial_vs_best_table.tex
+Saved bar chart      : /zfsstore/user/s4374827/NLP/Codes/Output/Step3_final_results/plots/Step3_initial_vs_best_bar_chart.png
+Saved threshold plot : /zfsstore/user/s4374827/NLP/Codes/Output/Step3_final_results/plots/Step3_threshold_accuracy_plot.png
+
+====================================================================================================
+FINAL RESULT SUMMARY
+====================================================================================================
+Initial Qwen3 Accuracy             : 0.7177
+Initial Qwen3 Macro F1             : 0.7027
+
+Best confidence-gated run
+----------------------------------------------------------------------------------------------------
+Technique                          : atomic
+Threshold                          : 0.95
+Accuracy                           : 0.7230
+Macro F1                           : 0.7109
+Hateful F1                         : 0.6519
+Hateful Recall                     : 0.7312
+Refined Count                      : 653
+Refinement Rate                    : 0.2177
+Net Correction Gain                : 16
+
+Improvement over initial Qwen3
+----------------------------------------------------------------------------------------------------
+Accuracy gain                      : +0.0053
+Macro F1 gain                      : +0.0082
+Job finished: Mon May 11 11:15:34 CEST 2026

@@ -1,0 +1,15 @@
+========================================
+Job started: Sun May 10 01:36:05 CEST 2026
+Node: node881
+Job ID: 2171513
+========================================
+Python: /home/s4374827/.conda/envs/nlp_env/bin/python
+Running initial Hate meme prediction using InternVL ..
+Model      : OpenGVLab/InternVL3-8B-hf
+Dataset    : emily49/hateful_memes_train_dev
+Device     : cuda
+Max records: 3000
+Output     : /zfsstore/user/s4374827/NLP/Codes/Output/Step1_internvl_initial_predictions.jsonl
+
+Starting InternVL3 initial prediction
+Job finished: Sun May 10 01:38:16 CEST 2026

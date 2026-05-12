@@ -1,0 +1,49 @@
+{
+  "model_name": "InternVL3-8B",
+  "model_id": "OpenGVLab/InternVL3-8B-hf",
+  "dataset_id": "emily49/hateful_memes_train_dev",
+  "max_records": 3000,
+  "rows_processed": 3000,
+  "unique_examples": 3000,
+  "hateful_examples": 1064,
+  "non_hateful_examples": 1936,
+  "accuracy": 0.705667,
+  "balanced_accuracy": 0.741262,
+  "macro_precision": 0.723325,
+  "macro_recall": 0.741262,
+  "macro_f1": 0.703099,
+  "weighted_precision": 0.772363,
+  "weighted_recall": 0.705667,
+  "weighted_f1": 0.711125,
+  "class_metrics": {
+    "non_hateful": {
+      "precision": 0.892033,
+      "recall": 0.618802,
+      "f1": 0.730711,
+      "support": 1936
+    },
+    "hateful": {
+      "precision": 0.554617,
+      "recall": 0.863722,
+      "f1": 0.675487,
+      "support": 1064
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "non_hateful",
+      "hateful"
+    ],
+    "matrix": [
+      [
+        1198,
+        738
+      ],
+      [
+        145,
+        919
+      ]
+    ]
+  },
+  "duplicate_id_rows": 0
+}

@@ -1,0 +1,35 @@
+========================================
+Job started: Sun May 10 18:27:25 CEST 2026
+Node: node006
+Job ID: 2219581
+========================================
+Python: /home/s4374827/.conda/envs/nlp_env/bin/python
+Running VLM comparison ..
+
+====================================================================================================
+DATASET STATISTICS
+====================================================================================================
+Rows processed                : 3000
+Unique examples               : 3000
+Hateful examples              : 1064
+Non-hateful examples          : 1936
+Duplicate id rows             : 0
+
+====================================================================================================
+STEP 1 MODEL RANKING
+====================================================================================================
+Rank  Model                         Accuracy    Macro F1    Bal. Acc    Hateful F1  Hateful Recall 
+----------------------------------------------------------------------------------------------------
+1     InternVL3-8B                  0.7057      0.7031      0.7413      0.6755      0.8637         
+2     Qwen3-VL-8B                   0.7177      0.7027      0.7127      0.6360      0.6955         
+3     LLaVA-OneVision-Qwen2-7B      0.6497      0.6366      0.6494      0.5677      0.6485         
+
+====================================================================================================
+SELECTED MODEL
+====================================================================================================
+Best model based on Macro F1: InternVL3-8B
+Model ID: OpenGVLab/InternVL3-8B-hf
+
+Saved ranking to: /zfsstore/user/s4374827/NLP/Codes/Output/Step1_model_comparison_ranking.json
+Saved bar chart to: /zfsstore/user/s4374827/NLP/Codes/Output/Step1_model_comparison_bar_chart.png
+Job finished: Sun May 10 18:27:40 CEST 2026

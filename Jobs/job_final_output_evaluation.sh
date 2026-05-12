@@ -1,0 +1,39 @@
+#!/bin/bash
+#SBATCH --job-name=final_output_evaluation
+#SBATCH --output=/home/s4374827/NLP/Logs/final_output_evaluation_%j.out
+#SBATCH --error=/home/s4374827/NLP/Logs/final_output_evaluation_%j.err
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=10G
+#SBATCH --time=1:00:00
+#SBATCH --partition=cpu-short
+
+echo "========================================"
+echo "Job started: $(date)"
+echo "Node: $HOSTNAME"
+echo "Job ID: $SLURM_JOB_ID"
+echo "========================================"
+
+module purge
+module load ALICE/default
+module load CUDA/12.4.0
+module load Miniconda3/24.7.1-0
+
+# 1. Install GPU dependencies
+source /easybuild/software/Miniconda3/24.7.1-0/etc/profile.d/conda.sh
+conda activate base
+conda activate nlp_env
+export PATH="/home/s4374827/.conda/envs/nlp_env/bin:$PATH"
+
+echo "Python: $(which python)"
+
+cd /home/s4374827/NLP/Codes
+
+# 1. Code execution
+echo "Running Final Output Evaluation .."
+python -u final_output_evaluation.py
+
+echo "Job finished: $(date)"
+
+

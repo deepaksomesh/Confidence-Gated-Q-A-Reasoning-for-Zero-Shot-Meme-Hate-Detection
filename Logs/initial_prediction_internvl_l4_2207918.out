@@ -1,0 +1,83 @@
+========================================
+Job started: Sun May 10 15:29:12 CEST 2026
+Node: node863
+Job ID: 2207918
+========================================
+Python: /home/s4374827/.conda/envs/nlp_env/bin/python
+Running initial Hate meme prediction using InternVL ..
+Model      : OpenGVLab/InternVL3-8B-hf
+Dataset    : emily49/hateful_memes_train_dev
+Device     : cuda
+Max records: 3000
+Output     : /zfsstore/user/s4374827/NLP/Codes/Output/Step1_internvl_initial_predictions.jsonl
+
+Starting InternVL3 initial prediction
+Processed 100/3000
+Processed 200/3000
+Processed 300/3000
+Processed 400/3000
+Processed 500/3000
+Processed 600/3000
+Processed 700/3000
+Processed 800/3000
+Processed 900/3000
+Processed 1000/3000
+Processed 1100/3000
+Processed 1200/3000
+Processed 1300/3000
+Processed 1400/3000
+Processed 1500/3000
+Processed 1600/3000
+Processed 1700/3000
+Processed 1800/3000
+Processed 1900/3000
+Processed 2000/3000
+Processed 2100/3000
+Processed 2200/3000
+Processed 2300/3000
+Processed 2400/3000
+Processed 2500/3000
+Processed 2600/3000
+Processed 2700/3000
+Processed 2800/3000
+Processed 2900/3000
+Processed 3000/3000
+
+====================================================================================================
+DATASET OVERVIEW
+====================================================================================================
+Rows processed                : 3000
+Unique examples               : 3000
+Hateful examples              : 1064
+Non-hateful examples          : 1936
+Duplicate id rows             : 0
+
+====================================================================================================
+INITIAL PREDICTION PERFORMANCE
+====================================================================================================
+Accuracy                      : 0.7057
+Balanced accuracy             : 0.7413
+Macro precision               : 0.7233
+Macro recall                  : 0.7413
+Macro F1                      : 0.7031
+Weighted precision            : 0.7724
+Weighted recall               : 0.7057
+Weighted F1                   : 0.7111
+
+====================================================================================================
+CLASS-WISE METRICS
+====================================================================================================
+Class                Precision       Recall          F1              Support   
+non_hateful          0.8920          0.6188          0.7307          1936      
+hateful              0.5546          0.8637          0.6755          1064      
+
+====================================================================================================
+CONFUSION MATRIX
+====================================================================================================
+Rows = ground truth, columns = prediction
+Labels: [non-hateful, hateful]
+[[1198, 738], [145, 919]]
+
+Saved predictions to: /zfsstore/user/s4374827/NLP/Codes/Output/Step1_internvl_initial_predictions.jsonl
+Saved metrics to    : /zfsstore/user/s4374827/NLP/Codes/Output/Step1_internvl_initial_metrics.json
+Job finished: Sun May 10 17:18:43 CEST 2026

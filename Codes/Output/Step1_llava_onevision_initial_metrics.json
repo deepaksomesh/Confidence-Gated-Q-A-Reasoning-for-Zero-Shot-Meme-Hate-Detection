@@ -1,0 +1,49 @@
+{
+  "model_name": "LLaVA-OneVision-Qwen2-7B",
+  "model_id": "llava-hf/llava-onevision-qwen2-7b-ov-hf",
+  "dataset_id": "emily49/hateful_memes_train_dev",
+  "max_records": 3000,
+  "rows_processed": 3000,
+  "unique_examples": 3000,
+  "hateful_examples": 1064,
+  "non_hateful_examples": 1936,
+  "accuracy": 0.649667,
+  "balanced_accuracy": 0.649403,
+  "macro_precision": 0.637864,
+  "macro_recall": 0.649403,
+  "macro_f1": 0.636594,
+  "weighted_precision": 0.676555,
+  "weighted_recall": 0.649667,
+  "weighted_f1": 0.656628,
+  "class_metrics": {
+    "non_hateful": {
+      "precision": 0.770974,
+      "recall": 0.65031,
+      "f1": 0.70552,
+      "support": 1936
+    },
+    "hateful": {
+      "precision": 0.504755,
+      "recall": 0.648496,
+      "f1": 0.567668,
+      "support": 1064
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "non_hateful",
+      "hateful"
+    ],
+    "matrix": [
+      [
+        1259,
+        677
+      ],
+      [
+        374,
+        690
+      ]
+    ]
+  },
+  "duplicate_id_rows": 0
+}

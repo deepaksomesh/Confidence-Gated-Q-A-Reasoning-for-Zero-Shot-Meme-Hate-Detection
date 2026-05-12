@@ -1,0 +1,83 @@
+========================================
+Job started: Sun May 10 16:00:14 CEST 2026
+Node: node868
+Job ID: 2207919
+========================================
+Python: /home/s4374827/.conda/envs/nlp_env/bin/python
+Running initial Hate meme prediction using Llava ..
+Model      : llava-hf/llava-onevision-qwen2-7b-ov-hf
+Dataset    : emily49/hateful_memes_train_dev
+Device     : cuda
+Max records: 3000
+Output     : /zfsstore/user/s4374827/NLP/Codes/Output/Step1_llava_onevision_initial_predictions.jsonl
+
+Starting LLaVA-OneVision initial prediction
+Processed 100/3000
+Processed 200/3000
+Processed 300/3000
+Processed 400/3000
+Processed 500/3000
+Processed 600/3000
+Processed 700/3000
+Processed 800/3000
+Processed 900/3000
+Processed 1000/3000
+Processed 1100/3000
+Processed 1200/3000
+Processed 1300/3000
+Processed 1400/3000
+Processed 1500/3000
+Processed 1600/3000
+Processed 1700/3000
+Processed 1800/3000
+Processed 1900/3000
+Processed 2000/3000
+Processed 2100/3000
+Processed 2200/3000
+Processed 2300/3000
+Processed 2400/3000
+Processed 2500/3000
+Processed 2600/3000
+Processed 2700/3000
+Processed 2800/3000
+Processed 2900/3000
+Processed 3000/3000
+
+====================================================================================================
+DATASET OVERVIEW
+====================================================================================================
+Rows processed                : 3000
+Unique examples               : 3000
+Hateful examples              : 1064
+Non-hateful examples          : 1936
+Duplicate id rows             : 0
+
+====================================================================================================
+INITIAL PREDICTION PERFORMANCE
+====================================================================================================
+Accuracy                      : 0.6497
+Balanced accuracy             : 0.6494
+Macro precision               : 0.6379
+Macro recall                  : 0.6494
+Macro F1                      : 0.6366
+Weighted precision            : 0.6766
+Weighted recall               : 0.6497
+Weighted F1                   : 0.6566
+
+====================================================================================================
+CLASS-WISE METRICS
+====================================================================================================
+Class                Precision       Recall          F1              Support   
+non_hateful          0.7710          0.6503          0.7055          1936      
+hateful              0.5048          0.6485          0.5677          1064      
+
+====================================================================================================
+CONFUSION MATRIX
+====================================================================================================
+Rows = ground truth, columns = prediction
+Labels: [non-hateful, hateful]
+[[1259, 677], [374, 690]]
+
+Saved predictions to: /zfsstore/user/s4374827/NLP/Codes/Output/Step1_llava_onevision_initial_predictions.jsonl
+Saved metrics to    : /zfsstore/user/s4374827/NLP/Codes/Output/Step1_llava_onevision_initial_metrics.json
+Job finished: Sun May 10 17:42:21 CEST 2026

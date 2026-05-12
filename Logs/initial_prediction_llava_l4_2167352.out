@@ -1,0 +1,15 @@
+========================================
+Job started: Sat May  9 18:44:30 CEST 2026
+Node: node880
+Job ID: 2167352
+========================================
+Python: /home/s4374827/.conda/envs/nlp_env/bin/python
+Running initial Hate meme prediction using Llava ..
+Model      : llava-hf/llava-onevision-qwen2-7b-ov-hf
+Dataset    : emily49/hateful_memes_train_dev
+Device     : cuda
+Max records: 3000
+Output     : /zfsstore/user/s4374827/NLP/Codes/Output/Step1_llava_onevision_initial_predictions.jsonl
+
+Starting LLaVA-OneVision initial prediction
+Job finished: Sat May  9 18:48:10 CEST 2026

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/zfsstore/user/s4374827/NLP/Codes/vlm_comparison.py", line 211, in <module>
+    main()
+  File "/zfsstore/user/s4374827/NLP/Codes/vlm_comparison.py", line 201, in main
+    records = load_metrics(METRIC_FILES)
+  File "/zfsstore/user/s4374827/NLP/Codes/vlm_comparison.py", line 42, in load_metrics
+    raise FileNotFoundError(f"Missing metric file: {file_path}")
+FileNotFoundError: Missing metric file: /zfsstore/user/s4374827/NLP/Output/Step1_qwen3_initial_metrics.json

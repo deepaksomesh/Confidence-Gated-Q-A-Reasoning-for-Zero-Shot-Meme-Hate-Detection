@@ -1,0 +1,49 @@
+{
+  "model_name": "Qwen3-VL-8B",
+  "model_id": "Qwen/Qwen3-VL-8B-Instruct",
+  "dataset_id": "emily49/hateful_memes_train_dev",
+  "max_records": 3000,
+  "rows_processed": 3000,
+  "unique_examples": 3000,
+  "hateful_examples": 1064,
+  "non_hateful_examples": 1936,
+  "accuracy": 0.717667,
+  "balanced_accuracy": 0.712672,
+  "macro_precision": 0.699689,
+  "macro_recall": 0.712672,
+  "macro_f1": 0.702705,
+  "weighted_precision": 0.732762,
+  "weighted_recall": 0.717667,
+  "weighted_f1": 0.722091,
+  "class_metrics": {
+    "non_hateful": {
+      "precision": 0.813472,
+      "recall": 0.729855,
+      "f1": 0.769398,
+      "support": 1936
+    },
+    "hateful": {
+      "precision": 0.585907,
+      "recall": 0.695489,
+      "f1": 0.636012,
+      "support": 1064
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "non_hateful",
+      "hateful"
+    ],
+    "matrix": [
+      [
+        1413,
+        523
+      ],
+      [
+        324,
+        740
+      ]
+    ]
+  },
+  "duplicate_id_rows": 0
+}

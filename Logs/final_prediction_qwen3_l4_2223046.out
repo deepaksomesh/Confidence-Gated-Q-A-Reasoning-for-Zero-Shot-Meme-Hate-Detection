@@ -1,0 +1,293 @@
+========================================
+Job started: Sun May 10 19:01:28 CEST 2026
+Node: node882
+Job ID: 2223046
+========================================
+Python: /home/s4374827/.conda/envs/nlp_env/bin/python
+Running final Hate meme prediction using Qwen3 on confidence gated threholds ..
+Model        : Qwen/Qwen3-VL-8B-Instruct
+Dataset      : emily49/hateful_memes_train_dev
+Device       : cuda
+Max records  : 3000
+Initial file : /zfsstore/user/s4374827/NLP/Codes/Output/Step1_qwen3_initial_predictions.jsonl
+
+====================================================================================================
+STEP 2 QWEN3 REFINEMENT ABLATION
+====================================================================================================
+Initial records loaded: 3000
+Techniques: ['atomic', 'static_qa', 'dynamic_qa', 'cot']
+Thresholds: [0.6, 0.75, 0.85, 0.95]
+
+====================================================================================================
+BUILDING REFINEMENT CACHE: atomic
+====================================================================================================
+Candidate examples below threshold 0.95: 653
+Refined 100/653 for atomic
+Refined 200/653 for atomic
+Refined 300/653 for atomic
+Refined 400/653 for atomic
+Refined 500/653 for atomic
+Refined 600/653 for atomic
+Completed refinement cache for atomic: 653 records
+
+----------------------------------------------------------------------------------------------------
+Technique: atomic | Threshold: 0.6
+----------------------------------------------------------------------------------------------------
+Rows processed                : 3000
+Refined count                 : 371
+Refinement rate               : 0.1237
+Changed predictions           : 45
+Net correction gain           : 13
+Accuracy                      : 0.7220
+Macro F1                      : 0.7093
+Hateful F1                    : 0.6484
+Hateful recall                : 0.7227
+
+----------------------------------------------------------------------------------------------------
+Technique: atomic | Threshold: 0.75
+----------------------------------------------------------------------------------------------------
+Rows processed                : 3000
+Refined count                 : 426
+Refinement rate               : 0.1420
+Changed predictions           : 48
+Net correction gain           : 14
+Accuracy                      : 0.7223
+Macro F1                      : 0.7097
+Hateful F1                    : 0.6493
+Hateful recall                : 0.7246
+
+----------------------------------------------------------------------------------------------------
+Technique: atomic | Threshold: 0.85
+----------------------------------------------------------------------------------------------------
+Rows processed                : 3000
+Refined count                 : 495
+Refinement rate               : 0.1650
+Changed predictions           : 53
+Net correction gain           : 13
+Accuracy                      : 0.7220
+Macro F1                      : 0.7096
+Hateful F1                    : 0.6496
+Hateful recall                : 0.7265
+
+----------------------------------------------------------------------------------------------------
+Technique: atomic | Threshold: 0.95
+----------------------------------------------------------------------------------------------------
+Rows processed                : 3000
+Refined count                 : 653
+Refinement rate               : 0.2177
+Changed predictions           : 60
+Net correction gain           : 16
+Accuracy                      : 0.7230
+Macro F1                      : 0.7109
+Hateful F1                    : 0.6519
+Hateful recall                : 0.7312
+
+====================================================================================================
+BUILDING REFINEMENT CACHE: static_qa
+====================================================================================================
+Candidate examples below threshold 0.95: 653
+Refined 100/653 for static_qa
+Refined 200/653 for static_qa
+Refined 300/653 for static_qa
+Refined 400/653 for static_qa
+Refined 500/653 for static_qa
+Refined 600/653 for static_qa
+Completed refinement cache for static_qa: 653 records
+
+----------------------------------------------------------------------------------------------------
+Technique: static_qa | Threshold: 0.6
+----------------------------------------------------------------------------------------------------
+Rows processed                : 3000
+Refined count                 : 371
+Refinement rate               : 0.1237
+Changed predictions           : 166
+Net correction gain           : -8
+Accuracy                      : 0.7150
+Macro F1                      : 0.7066
+Hateful F1                    : 0.6570
+Hateful recall                : 0.7697
+
+----------------------------------------------------------------------------------------------------
+Technique: static_qa | Threshold: 0.75
+----------------------------------------------------------------------------------------------------
+Rows processed                : 3000
+Refined count                 : 426
+Refinement rate               : 0.1420
+Changed predictions           : 178
+Net correction gain           : -8
+Accuracy                      : 0.7150
+Macro F1                      : 0.7070
+Hateful F1                    : 0.6587
+Hateful recall                : 0.7754
+
+----------------------------------------------------------------------------------------------------
+Technique: static_qa | Threshold: 0.85
+----------------------------------------------------------------------------------------------------
+Rows processed                : 3000
+Refined count                 : 495
+Refinement rate               : 0.1650
+Changed predictions           : 199
+Net correction gain           : -13
+Accuracy                      : 0.7133
+Macro F1                      : 0.7060
+Hateful F1                    : 0.6595
+Hateful recall                : 0.7829
+
+----------------------------------------------------------------------------------------------------
+Technique: static_qa | Threshold: 0.95
+----------------------------------------------------------------------------------------------------
+Rows processed                : 3000
+Refined count                 : 653
+Refinement rate               : 0.2177
+Changed predictions           : 231
+Net correction gain           : -17
+Accuracy                      : 0.7120
+Macro F1                      : 0.7056
+Hateful F1                    : 0.6622
+Hateful recall                : 0.7961
+
+====================================================================================================
+BUILDING REFINEMENT CACHE: dynamic_qa
+====================================================================================================
+Candidate examples below threshold 0.95: 653
+Refined 100/653 for dynamic_qa
+Refined 200/653 for dynamic_qa
+Refined 300/653 for dynamic_qa
+Refined 400/653 for dynamic_qa
+Refined 500/653 for dynamic_qa
+Refined 600/653 for dynamic_qa
+Completed refinement cache for dynamic_qa: 653 records
+
+----------------------------------------------------------------------------------------------------
+Technique: dynamic_qa | Threshold: 0.6
+----------------------------------------------------------------------------------------------------
+Rows processed                : 3000
+Refined count                 : 371
+Refinement rate               : 0.1237
+Changed predictions           : 80
+Net correction gain           : -4
+Accuracy                      : 0.7163
+Macro F1                      : 0.7048
+Hateful F1                    : 0.6464
+Hateful recall                : 0.7312
+
+----------------------------------------------------------------------------------------------------
+Technique: dynamic_qa | Threshold: 0.75
+----------------------------------------------------------------------------------------------------
+Rows processed                : 3000
+Refined count                 : 426
+Refinement rate               : 0.1420
+Changed predictions           : 82
+Net correction gain           : -2
+Accuracy                      : 0.7170
+Macro F1                      : 0.7056
+Hateful F1                    : 0.6476
+Hateful recall                : 0.7331
+
+----------------------------------------------------------------------------------------------------
+Technique: dynamic_qa | Threshold: 0.85
+----------------------------------------------------------------------------------------------------
+Rows processed                : 3000
+Refined count                 : 495
+Refinement rate               : 0.1650
+Changed predictions           : 91
+Net correction gain           : -1
+Accuracy                      : 0.7173
+Macro F1                      : 0.7063
+Hateful F1                    : 0.6493
+Hateful recall                : 0.7378
+
+----------------------------------------------------------------------------------------------------
+Technique: dynamic_qa | Threshold: 0.95
+----------------------------------------------------------------------------------------------------
+Rows processed                : 3000
+Refined count                 : 653
+Refinement rate               : 0.2177
+Changed predictions           : 104
+Net correction gain           : -8
+Accuracy                      : 0.7150
+Macro F1                      : 0.7044
+Hateful F1                    : 0.6483
+Hateful recall                : 0.7406
+
+====================================================================================================
+BUILDING REFINEMENT CACHE: cot
+====================================================================================================
+Candidate examples below threshold 0.95: 653
+Refined 100/653 for cot
+Refined 200/653 for cot
+Refined 300/653 for cot
+Refined 400/653 for cot
+Refined 500/653 for cot
+Refined 600/653 for cot
+Completed refinement cache for cot: 653 records
+
+----------------------------------------------------------------------------------------------------
+Technique: cot | Threshold: 0.6
+----------------------------------------------------------------------------------------------------
+Rows processed                : 3000
+Refined count                 : 371
+Refinement rate               : 0.1237
+Changed predictions           : 25
+Net correction gain           : 3
+Accuracy                      : 0.7187
+Macro F1                      : 0.7049
+Hateful F1                    : 0.6412
+Hateful recall                : 0.7086
+
+----------------------------------------------------------------------------------------------------
+Technique: cot | Threshold: 0.75
+----------------------------------------------------------------------------------------------------
+Rows processed                : 3000
+Refined count                 : 426
+Refinement rate               : 0.1420
+Changed predictions           : 26
+Net correction gain           : 2
+Accuracy                      : 0.7183
+Macro F1                      : 0.7046
+Hateful F1                    : 0.6409
+Hateful recall                : 0.7086
+
+----------------------------------------------------------------------------------------------------
+Technique: cot | Threshold: 0.85
+----------------------------------------------------------------------------------------------------
+Rows processed                : 3000
+Refined count                 : 495
+Refinement rate               : 0.1650
+Changed predictions           : 28
+Net correction gain           : 0
+Accuracy                      : 0.7177
+Macro F1                      : 0.7040
+Hateful F1                    : 0.6403
+Hateful recall                : 0.7086
+
+----------------------------------------------------------------------------------------------------
+Technique: cot | Threshold: 0.95
+----------------------------------------------------------------------------------------------------
+Rows processed                : 3000
+Refined count                 : 653
+Refinement rate               : 0.2177
+Changed predictions           : 29
+Net correction gain           : -1
+Accuracy                      : 0.7173
+Macro F1                      : 0.7037
+Hateful F1                    : 0.6401
+Hateful recall                : 0.7086
+
+====================================================================================================
+BEST STEP 2 RUNS BY ACCURACY
+====================================================================================================
+Rank  Technique      Threshold   Accuracy    Macro F1    Refined   
+1     atomic         0.95        0.7230      0.7109      653       
+2     atomic         0.75        0.7223      0.7097      426       
+3     atomic         0.85        0.7220      0.7096      495       
+4     atomic         0.60        0.7220      0.7093      371       
+5     cot            0.60        0.7187      0.7049      371       
+6     cot            0.75        0.7183      0.7046      426       
+7     cot            0.85        0.7177      0.7040      495       
+8     dynamic_qa     0.85        0.7173      0.7063      495       
+9     cot            0.95        0.7173      0.7037      653       
+10    dynamic_qa     0.75        0.7170      0.7056      426       
+
+Saved summary to: /zfsstore/user/s4374827/NLP/Codes/Output/Step2_qwen3_ablation_summary.json
+Job finished: Mon May 11 04:16:42 CEST 2026
