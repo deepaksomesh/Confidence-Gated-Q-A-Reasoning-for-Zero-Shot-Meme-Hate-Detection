@@ -1,1 +1,4 @@
 nlp4sg/
+.DS_Store
+__pycache__/
+*.pyc
